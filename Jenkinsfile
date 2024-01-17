@@ -1,12 +1,5 @@
 pipeline {
     agent any
-
-
-    environment {
-        DOCKERHUB_CREDENTIALS = credentials('arjun')
-        dockerHubUser='kprasannamarolix'
-        dockerHubPassword='prasann@11'
-    }
     
     stages{
         stage('Code'){
@@ -21,8 +14,11 @@ pipeline {
         }
         stage('Push'){
             steps{
-                sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
+withCredentials([usernamePassword(credentialsId: 'arjun', passwordVariable: 'trewqsdfghy', usernameVariable: 's2s3s4s5uyt')]) {
+     sh "docker login -u ${env.s2s3s4s5uyt} -p ${env.trewqsdfghy}"
                  sh 'docker push kprasannamarolix/myimage:latest'
+}
+            
                 }
             }
         stage('Deploy'){
