@@ -14,8 +14,8 @@ pipeline {
         }
         stage('Push'){
             steps{
-withCredentials([usernamePassword(credentialsId: 'arjun', passwordVariable: 'trewqsdfghy', usernameVariable: 's2s3s4s5uyt')]) {
-     sh "docker login -u ${env.s2s3s4s5uyt} -p ${env.trewqsdfghy}"
+withCredentials([usernamePassword(credentialsId: 'arjun', passwordVariable: 'njhytrew', usernameVariable: 'bgtrewd')]) {
+     sh "docker login -u ${env.bgtrewd} -p ${env.njhytrew}"
                  sh 'docker push kprasannamarolix/task:latest'
 }
             
